@@ -28,6 +28,12 @@ class TestStack(TestCase):
         self.assertEqual(self.stack.top.next_node.next_node.data, 'data1')
         self.assertEqual(self.stack.top.next_node.next_node.next_node, None)
 
+    def test_pop(self):
+        self.assertEqual(self.stack.push('data1'), None)
+        self.assertEqual(self.stack.push('data2'), None)
+        self.assertEqual(self.stack.pop(), 'data2')
+        self.assertEqual(self.stack.top.data, 'data1')
+
 
 if __name__ == '__main__':
     unittest.main()
